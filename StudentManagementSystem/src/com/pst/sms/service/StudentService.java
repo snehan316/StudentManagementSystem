@@ -34,4 +34,22 @@ public class StudentService {
 		studentDAO = new StudentDAO();
 		return studentDAO.delete(rollNumber);
 	}
+	
+	public StudentDTO searchStudent(int rollNumber) {
+		studentDAO = new StudentDAO();
+		return studentDAO.getStudentDetails(rollNumber);
+	}
+	
+	public int modifyStudent(StudentVO studentVO) {
+		studentDAO = new StudentDAO();
+		studentBO = new StudentBO();
+		
+		studentBO.setRollNumber(studentVO.getRollNumber());
+		studentBO.setName(studentVO.getName());
+		studentBO.setGender(studentVO.getGender());
+		studentBO.setCourse(studentVO.getCourse());
+		
+		int i = studentDAO.updateStudent(studentBO);
+		return i;
+	}
 }
