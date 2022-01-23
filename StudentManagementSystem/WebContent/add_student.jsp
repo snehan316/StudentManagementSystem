@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Add Student Page</title>
 
 <script>
  function doValidate(){
@@ -57,12 +57,18 @@
 
 
 </script>
+
+<% String msg = (String) request.getAttribute("msg");
+	if(msg == null)
+		msg = "";
+%>
 </head>
 <body>
 
 <div><%@include file="header.html" %></div>
 <div>
 	<h1>Add Student</h1>
+<h4 style= "color:green"><%= msg %></h4>	
 	<form action="./AddStudentController" name="student_form" method="post" onSubmit="return doValidate()">
 		<table>
 			<tr>
