@@ -35,7 +35,13 @@ public class AddStudentController extends HttpServlet {
 		studentVO.setCourse(course);
 		
 		studentService = new StudentService();
-		studentService.saveData(studentVO);
+		int i = studentService.saveData(studentVO);
+		
+		if( i != 0) {
+			String msg = "Successfully added";
+			request.setAttribute("msg", msg);
+			request.getRequestDispatcher("./add_student.jsp").forward(request, response);
+		}
 
 	}
 }

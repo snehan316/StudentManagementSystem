@@ -1,6 +1,6 @@
-package com.pst.sms.VO;
+package com.pst.sms.DTO;
 
-public class StudentVO {
+public class StudentDTO {
 
 	private int rollNumber;
 	private String studentName;
@@ -32,6 +32,5 @@ public class StudentVO {
 	public void setCourse(String course) {
 		this.course = course;
 	}
-	
 	
 }
